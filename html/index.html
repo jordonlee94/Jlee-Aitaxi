@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AI Taxi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="display:none;">
+  <div id="app" class="taxi-root" aria-hidden="true">
+    <div class="taxi-panel">
+      <div class="taxi-header">
+        <div class="taxi-title">AI Taxi</div>
+        <button id="closeBtn" class="btn-close">✕</button>
+      </div>
+      <div class="taxi-body">
+        <div class="left">
+          <div class="label">Destination</div>
+          <div class="row">
+            <button id="useWaypoint" class="theme-btn">📍 Use Map Waypoint</button>
+            <button id="openQuick" class="theme-btn">📌 Quick</button>
+          </div>
+          <div id="quickList" class="quick-list"></div>
+        </div>
+        <div class="right">
+          <div class="label">Mode</div>
+          <select id="modeSelect" class="select">
+            <option value="watch">Watch Journey</option>
+            <option value="skip">Skip Journey</option>
+          </select>
+          <div class="label" style="margin-top:12px">Estimated Fare</div>
+          <div id="fareDisplay" class="fare">$0</div>
+          <div id="etaDisplay" class="fare" style="font-size:14px;color:#bdbdbd;margin-top:6px">Est. Time: --</div>
+          <button id="requestTaxi" class="btn-request" disabled>🚕 REQUEST TAXI</button>
+        </div>
+      </div>
+      <div id="info" class="info"></div>
+    </div>
+  </div>
+
+  <!-- Confirmation modal -->
+  <div id="confirmModal" class="confirm-modal hidden">
+    <div class="confirm-card">
+      <div class="confirm-title">Confirm Ride</div>
+      <div id="confirmBody" class="confirm-body">Destination: --<br>Fare: $--<br>ETA: --</div>
+      
+  <div id="paymentOptions" class="payment-options-row">
+    <div id="cashOption" class="payment-option" data-tooltip="Pay by Cash" onclick="setPayment('cash')">
+      <svg class="pay-icon" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/></svg>
+      <div class="pay-label">Cash</div>
+    </div>
+    <div id="bankOption" class="payment-option selected" data-tooltip="Pay by Bank" onclick="setPayment('bank')">
+      <svg class="pay-icon" viewBox="0 0 24 24"><path d="M3 11l9-6 9 6v7a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/></svg>
+      <div class="pay-label">Bank</div>
+    </div>
+  </div>
+
+    <div class="confirm-actions">
+        <button id="confirmBtn" class="confirm-accept confirm-btn bank"><span id="confirmIcon">🏦</span> Confirm – Pay with Bank</button>
+        <button id="cancelBtn" class="confirm-cancel">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- HUD: bottom-right -->
+  <div id="taxi-hud" class="taxi-hud hidden">
+    <div id="hud-line" class="hud-line">🚕 ETA: -- | Dist: -- m | Fare: $--</div>
+    <div class="hud-bar-bg"><div id="hud-bar" class="hud-bar"></div></div>
+  </div>
+
+  <!-- Fare popup (bottom-right) -->
+  <div id="fare-popup" class="fare-popup hidden">🚕 Ride Complete!<br><span id="fare-amount">$0</span></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
