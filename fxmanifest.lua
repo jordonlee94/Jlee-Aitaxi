@@ -1,7 +1,7 @@
 fx_version 'cerulean'
 game 'gta5'
 
-author 'Assistant (GPT)'
+author 'JLeeGaming)'
 description 'QB-Core AI Taxi (v11) - confirmation modal, animated popups, anti-stuck'
 version '11.0.0'
 
