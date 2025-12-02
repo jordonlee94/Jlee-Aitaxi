@@ -3,7 +3,7 @@ Config = {}
 -- Core & models
 Config.TaxiModel = 'taxi'
 Config.DriverModel = 'A_M_M_Indian_01'
-Config.TaxiSpeed = 120.0  -- Increased for faster taxi service
+Config.TaxiSpeed = 80.0  -- tuned for stable, less CPU-intensive driving
 Config.DrivingStyle = 2883621 -- Ignores traffic lights and drives aggressively through obstacles
 
 -- Fare settings
@@ -50,7 +50,7 @@ Config.SoundEffects = true
 Config.AnimatedPopups = true
 
 -- Debug
-Config.Debug = true
+Config.Debug = false
 
 -- Preset locations (dynamic editable)
 Config.PresetLocations = {

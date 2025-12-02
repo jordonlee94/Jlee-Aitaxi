@@ -120,7 +120,7 @@ body{margin:0;font-family:"Open Sans",sans-serif;background:transparent;}
   color: var(--accent);
 }
 
-/* Active (selected) quick destination — same as Use Map Waypoint button */
+/* Active (selected) quick destination ï¿½ same as Use Map Waypoint button */
 .quick-list button.active {
   background: rgba(0, 0, 0, 0.4);
   border: 1px solid var(--accent);
